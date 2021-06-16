@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datetime superapp</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="src/main.js" type="module"></script>
+</head>
+
+<body>
+<div class="container">
+    <button id="appSelect" type="button">Открыть таймер</button>
+    <form id="datecalc" style="display: block">
+        <h3>Калькулятор дат</h3>
+        <p>
+            <label>
+                <strong>Первая дата:</strong>
+                <input type="date" name="firstDate" />
+            </label>
+        </p>
+        <p>
+            <label>
+                <strong>Вторая дата:</strong>
+                <input type="date" name="secondDate" />
+            </label>
+        </p>
+        <button type="submit">Расчитать промежуток</button>
+        <p id="datecalc__result"></p>
+    </form>
+
+    <div id="timer" style="display: none">
+        <h3>Таймер</h3>
+        <form>
+            <label>
+                <strong>Установите время:</strong>
+                <input id="timeInput" type="time" step='1' min="00:00:00" max="23:00:00">
+            </label>
+            <h1 id="timerField">00:00:00</h1>
+            <button type="button" id="start-pause">Старт</button>
+            <button type="button" id="reset">Сброс</button>
+        </form>
+    </div>
+</div>
+</body>
+
+</html>
