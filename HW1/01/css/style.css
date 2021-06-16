@@ -1,0 +1,16 @@
+body {
+    font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+    font-size: 1.2em;
+    color: #2c1a4d;
+    background: rgb(124,224,226);
+    background: linear-gradient(0deg, rgba(124,224,226,1) 0%, rgba(246,197,92,1) 100%);
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5em 0;
+}

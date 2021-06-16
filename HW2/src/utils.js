@@ -1,10 +1,15 @@
-// import {Howl, Howler} from 'howler';
+import {Howl} from './howler.js';
+import {resetStateTrue} from "./main.js";
 
 export const formatError = text => `
 <span style="color: red;">
     ${text}
 </span>
 `;
+
+const sound = new Howl({
+    src: ['./sounds/sound.mp3']
+});
 
 export function calcMillisec(timeString) {
     let [hours, minutes, seconds] = timeInput.value.split(":");
@@ -42,7 +47,6 @@ export function convertToTime(millisec) {
     //         seconds = (millisec % 60000)/1000;
     //         return;
     // }
-    console.log('convertToTime:', hours, minutes, seconds);
     return [hours, minutes, seconds];
 }
 
@@ -52,14 +56,15 @@ export function renderTime(timeArr, place) {
     let minutes = timeArr[1].toString().padStart(2,0);
     let seconds = timeArr[2].toString().padStart(2,0);
 
-    console.log('rendertime:', hours, minutes, seconds);
     place.innerText = `${hours}:${minutes}:${seconds}`;
 }
 
-// export function playSound(pathToSound) {
-//     const sound = new Howl({
-//         src: [pathToSound]
-//     });
-//
-//     sound.play();
-// }
+
+export function playSound() {
+    sound.play();
+}
+
+export function stopSound() {
+    sound.stop();
+    resetStateTrue();
+}
